@@ -67,5 +67,14 @@ int main() {
     std::string user_input;
     std::getline(std::cin, user_input);
 
+    std::string input_type = parse_input(user_input);
+    std::string binary = convert_to_binary(user_input, input_type);
+
+    if (binary.empty()) {
+        std::cout << "Invalid input. Please enter a valid decimal or hexadecimal number.\n";
+    } else {
+        std::cout << "Binary: " << binary << "\n";
+    }
+
     return 0;
 }

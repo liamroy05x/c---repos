@@ -14,6 +14,11 @@ std::string parse_input(const std::string& user_input) {
         return "unknown";
     }
 
+    // hex if starts with 0x / 0X
+    if (s.size() >= 2 && s[0] == '0' && (s[1] == 'x' || s[1] == 'X')) {
+        return "hex";
+    }
+
     return "unknown";
 }
 

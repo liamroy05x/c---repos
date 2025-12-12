@@ -19,6 +19,13 @@ std::string parse_input(const std::string& user_input) {
         return "hex";
     }
 
+    // if any A-F present, treat as hex (same as your Python)
+    for (char c : s) {
+        if (std::string("abcdefABCDEF").find(c) != std::string::npos) {
+            return "hex";
+        }
+    }
+
     return "unknown";
 }
 
